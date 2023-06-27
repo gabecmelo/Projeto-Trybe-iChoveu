@@ -117,5 +117,5 @@ export function handleSearch(event) {
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput.value;
   searchCities(searchValue);
-  // seu código aqui
+  
 }
