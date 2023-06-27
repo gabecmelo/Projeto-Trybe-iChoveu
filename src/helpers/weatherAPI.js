@@ -7,16 +7,21 @@ export const searchCities = async (term) => {
   return data;
 };
 
-export const getWeatherByCity = (cityURL) => {
-  cityURL.map(async (city) => {
+export const getWeatherByCity = async (cityURL) => {
+  const citiesInfos = await Promise.all(cityURL.map(async (city) => {
     const URL_CIDADE = city.url;
-    const response = await (await fetch(`http://api.weatherapi.com/v1/current.json?lang=pt&key=${TOKEN}&q=${URL_CIDADE}`)).json();
-    const currentInfos = response.current;
+    const data = await (await fetch(`http://api.weatherapi.com/v1/current.json?lang=pt&key=${TOKEN}&q=${URL_CIDADE}`)).json();
+    const currentInfos = data.current;
 
     return {
+      name: data.location.name,
+      country: data.location.country,
       temp: currentInfos.temp_c,
       condition: currentInfos.condition.text,
       icon: currentInfos.condition.icon,
+      url: URL_CIDADE,
     };
-  });
+  }));
+
+  return citiesInfos;
 };
