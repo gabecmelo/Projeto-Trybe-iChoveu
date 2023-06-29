@@ -109,10 +109,9 @@ export function createCityElement(cityInfo) {
   const cityForecast = createElement('button', 'city-forecast-button', 'Ver previsão');
   cityElement.appendChild(cityForecast);
   cityForecast.addEventListener('click', async () => {
-
-  const forecastList = await fetchForecast(url)
-  showForecast(forecastList)
-  })
+    const forecastList = await fetchForecast(url);
+    showForecast(forecastList);
+  });
 
   return cityElement;
 }
@@ -130,4 +129,4 @@ export async function handleSearch(event) {
   const citiesInfos = await getWeatherByCity(cities);
   const cityElements = citiesInfos.map((cityInfo) => createCityElement(cityInfo));
   appendElements(cityElements, '#cities');
-};
+}
