@@ -1,5 +1,6 @@
 import { searchCities, getWeatherByCity } from './weatherAPI';
 import { appendElements } from './appendElements';
+import { fetchForecast } from './fetchForecast';
 
 /**
  * Cria um elemento HTML com as informações passadas
@@ -78,7 +79,7 @@ export function showForecast(forecastList) {
  * Recebe um objeto com as informações de uma cidade e retorna um elemento HTML
  */
 export function createCityElement(cityInfo) {
-  const { name, country, temp, condition, icon /* url */ } = cityInfo;
+  const { name, country, temp, condition, icon, url } = cityInfo;
 
   const cityElement = createElement('li', 'city');
 
@@ -95,7 +96,7 @@ export function createCityElement(cityInfo) {
   tempContainer.appendChild(conditionElement);
   tempContainer.appendChild(tempElement);
 
-  const iconElement = createElement('img', 'condition-icon');
+  const iconElement = createElement('img', 'condition-ico n');
   iconElement.src = icon.replace('64x64', '128x128');
 
   const infoContainer = createElement('div', 'city-info-container');
@@ -104,6 +105,14 @@ export function createCityElement(cityInfo) {
 
   cityElement.appendChild(headingElement);
   cityElement.appendChild(infoContainer);
+
+  const cityForecast = createElement('button', 'city-forecast-button', 'Ver previsão');
+  cityElement.appendChild(cityForecast);
+  cityForecast.addEventListener('click', async () => {
+
+  const forecastList = await fetchForecast(url)
+  showForecast(forecastList)
+  })
 
   return cityElement;
 }
@@ -119,6 +128,6 @@ export async function handleSearch(event) {
   const searchValue = searchInput.value;
   const cities = await searchCities(searchValue);
   const citiesInfos = await getWeatherByCity(cities);
-  const CityElements = citiesInfos.map((cityInfo) => createCityElement(cityInfo));
-  appendElements(CityElements, '#cities');
-}
+  const cityElements = citiesInfos.map((cityInfo) => createCityElement(cityInfo));
+  appendElements(cityElements, '#cities');
+};
