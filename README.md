@@ -6,9 +6,7 @@ A partir dessa aplicação, o usuário pode pesquisar as condições climáticas
 
 ## Link para acesso
 
-Para acessar o projeto, basta acessar o link abaixo:
-
-[Link para acesso ao projeto](https://gabecmelo.github.io/iChoveu)
+O projeto iChoveu não possui um link para acesso, faça a instalação e inicie a aplicação no servidor local para acessar.
 
 ## Tecnologias Utilizadas
 
