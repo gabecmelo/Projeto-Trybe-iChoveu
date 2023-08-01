@@ -1,17 +1,21 @@
 {
+  "homepage":"https://gabecmelo.github.io/iChoveu",
   "name": "sd-0x-project-iChoveu",
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
     "start": "vite",
     "dev": "vite --open",
+    "build":"vite build",
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "cy": "cypress run",
     "cy:open": "cypress open --e2e --browser chrome",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js",
     "lint:styles": "stylelint *.css --config .stylelintrc.json --ignore-disables --allow-empty-input",
-    "cy-coverage": "cross-env NODE_OPTIONS=- vitest run --coverage --watch=false"
+    "cy-coverage": "cross-env NODE_OPTIONS=- vitest run --coverage --watch=false",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist"
   },
   "jest": {
     "coverageReporters": [
@@ -43,6 +47,7 @@
     "babel-jest": "^29.2.1",
     "cypress": "10.6.0",
     "cypress-multi-reporters": "1.6.1",
+    "gh-pages": "^5.0.0",
     "jest": "28.1.3",
     "mocha": "10.0.0",
     "mochawesome": "7.1.3",
