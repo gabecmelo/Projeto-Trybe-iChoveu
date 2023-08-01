@@ -26,7 +26,12 @@ Para executar o projeto em sua máquina, siga as seguintes instruções:
 
 <!---->
 
-    git clone https://github.com/gabecmelo/iChoveu.git
+    git clone git@github.com:gabecmelo/Projeto-Trybe-iChoveu.git
+ou
+
+<!--->
+    git clone https://github.com/gabecmelo/Projeto-Trybe-iChoveu.git
+
 
 2.  Instale as dependências do projeto com o comando:
 
