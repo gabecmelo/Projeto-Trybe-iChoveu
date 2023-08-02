@@ -1,8 +1,8 @@
+# iChoveu - Trybe
+
 ## Descrição do Projeto
 
 O iChoveu é um projeto desenvolvido durante o curso de desenvolvimento web full-stack da Trybe. O objetivo deste projeto é fornecer aos usuários uma forma rápida e conveniente de acompanhar a previsão do tempo de diversas cidades.
-
-A partir dessa aplicação, o usuário pode pesquisar as condições climáticas de uma cidade específica e verificar a previsão para o dia atual ou os próximos 7 dias. Alguns dos detalhes disponíveis incluem temperatura, umidade, velocidade do vento, entre outros.
 
 ## Link para acesso
 
