@@ -8,6 +8,8 @@ O iChoveu é um projeto desenvolvido durante o curso de desenvolvimento web full
 
 O projeto iChoveu não possui um link para acesso, faça a instalação e inicie a aplicação no servidor local para acessar.
 
+<img width="75%" src="/images/ScreenshotExample.png" alt="iChoveu Screenshot">
+
 ## Tecnologias Utilizadas
 
 As principais tecnologias utilizadas no desenvolvimento do projeto são:
